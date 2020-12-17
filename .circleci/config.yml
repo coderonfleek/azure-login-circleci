@@ -1,5 +1,8 @@
 jobs:
   login-to-azure:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:10.16.3
     executor: azure-cli/azure-docker
     steps:
       - azure-cli/login-with-service-principal
