@@ -14,11 +14,7 @@ jobs:
       - checkout
       - run:
           name: Install Azure functions tools
-          command: |
-            curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-            sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-            sudo apt-get update
-            sudo apt-get install azure-functions-core-tools-3
+          command: npm i -g azure-functions-core-tools@3 --unsafe-perm true
       - run:
           name: Run 'func'
           command: func
